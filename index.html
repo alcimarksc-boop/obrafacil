@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ObraFácil: manutenção, instalações e pequenos reparos residenciais em Teresina. Encontre seu serviço."
+    />
+    <meta name="theme-color" content="#102a4c" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>ObraFácil | Serviços residenciais em Teresina</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="imagens/casa.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topo">
+      <div class="container navegacao">
+        <a class="marca" href="#inicio" aria-label="ObraFácil — início"
+          ><svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M5 23 24 7l19 16M11 20v21h26V20M20 41V28h9v13" /></svg
+          ><span>Obra<b>Fácil</b><small>Serviços residenciais</small></span></a
+        >
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="navegacao"
+          aria-label="Abrir menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="navegacao" aria-label="Navegação principal">
+          <a href="#inicio">Início</a><a href="#servicos">Serviços</a
+          ><a href="#como-funciona">Como funciona</a><a href="#contato">Contato</a>
+        </nav>
+        <a class="btn topo-btn" href="#contato"
+          >Solicitar serviço <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="titulo">
+        <div class="hero-visual">
+          <img
+            src="imagens/casa.jpg"
+            alt="Casa térrea com varanda, jardim e fachada clara"
+            width="662"
+            height="384"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="container hero-interior">
+          <div class="hero-texto">
+            <h1 id="titulo">Manutenção e reparos<br />para <em>sua casa.</em></h1>
+            <p>
+              Do pequeno conserto à melhoria que ficou para depois. Encontre o serviço certo e deixe
+              sua casa em dia.
+            </p>
+            <div class="hero-botoes">
+              <a class="btn" href="#servicos"
+                >Encontre seu serviço <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="servicos" class="container secao">
+        <h2>Nossos serviços</h2>
+        <p class="sub">Escolha o reparo que sua casa precisa.</p>
+        <div class="grade-servicos">
+          <article class="card" data-genero="homem">
+            <div class="card-foto">
+              <div class="foto-pendente">Foto do serviço</div>
+              <span class="card-numero">01</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Reboco de parede</h3>
+              <p>Reparos e acabamento para deixar suas paredes prontas para uma nova fase.</p>
+              <button data-servico="Reboco de parede">
+                Solicitar serviço <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="card" data-genero="mulher">
+            <div class="card-foto">
+              <div class="foto-pendente">Foto do serviço</div>
+              <span class="card-numero">02</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Pintura</h3>
+              <p>Uma cor nova, um retoque ou a renovação que seu ambiente merece.</p>
+              <button data-servico="Pintura">
+                Solicitar serviço <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="card" data-genero="homem">
+            <div class="card-foto">
+              <div class="foto-pendente">Foto do serviço</div>
+              <span class="card-numero">03</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Troca de lâmpada</h3>
+              <p>Substituição de lâmpadas e luminárias para iluminar melhor sua casa.</p>
+              <button data-servico="Troca de lâmpada">
+                Solicitar serviço <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="card" data-genero="mulher">
+            <div class="card-foto">
+              <div class="foto-pendente">Foto do serviço</div>
+              <span class="card-numero">04</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Troca de tomada</h3>
+              <p>Troca e instalação de tomadas com atenção ao acabamento e à segurança.</p>
+              <button data-servico="Troca de tomada">
+                Solicitar serviço <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="card" data-genero="homem">
+            <div class="card-foto">
+              <div class="foto-pendente">Foto do serviço</div>
+              <span class="card-numero">05</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Troca de torneira</h3>
+              <p>Instalação de torneiras e avaliação daqueles pequenos vazamentos.</p>
+              <button data-servico="Troca de torneira">
+                Solicitar serviço <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="card" data-genero="mulher">
+            <div class="card-foto">
+              <div class="foto-pendente">Foto do serviço</div>
+              <span class="card-numero">06</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Montagem de móveis</h3>
+              <p>Mesas, camas e armários montados para você aproveitar seu espaço.</p>
+              <button data-servico="Montagem de móveis">
+                Solicitar serviço <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+        </div>
+        <div class="outros">
+          <h3>Precisa de outro reparo?</h3>
+          <a href="#contato">Preencha o formulário</a>
+        </div>
+      </section>
+      <section class="passos secao" id="como-funciona">
+        <div class="container">
+          <h2>Como funciona?</h2>
+          <div class="passos-grid">
+            <div>
+              <h3>1. Escolha</h3>
+              <p>Encontre seu serviço.</p>
+            </div>
+            <div>
+              <h3>2. Descreva</h3>
+              <p>Conte o que precisa no formulário.</p>
+            </div>
+            <div>
+              <h3>3. Confira</h3>
+              <p>Confira o resumo na tela.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container secao contato" id="contato">
+        <div class="contato-intro">
+          <h2>Solicite um serviço</h2>
+          <p>Informe seu nome e descreva o reparo.</p>
+        </div>
+        <div class="form-card">
+          <form id="formulario" class="formulario">
+            <label>Nome<input name="nome" required placeholder="Seu nome" /></label>
+            <label
+              >WhatsApp<input name="whatsapp" type="tel" required placeholder="DDD e telefone"
+            /></label>
+            <label class="amplo"
+              >Serviço<select name="servico" id="servico" required>
+                <option value="">Selecione</option>
+                <option>Reboco de parede</option>
+                <option>Pintura</option>
+                <option>Troca de lâmpada</option>
+                <option>Troca de tomada</option>
+                <option>Troca de torneira</option>
+                <option>Montagem de móveis</option>
+                <option>Outros serviços</option>
+              </select></label
+            >
+            <label class="amplo"
+              >Descrição<textarea name="descricao" id="descricao" rows="3" required></textarea>
+            </label>
+            <button class="btn amplo" type="submit">Ver resumo</button>
+          </form>
+          <div id="resultado" class="resultado" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <strong>ObraFácil</strong>
+        <p>Serviços residenciais.</p>
+      </div>
+    </footer>
+  </body>
+</html>
