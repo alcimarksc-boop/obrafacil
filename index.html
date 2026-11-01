@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ObraFácil: manutenção, instalações e pequenos reparos residenciais em Teresina. Encontre seu serviço."
+      content="ObraFácil: manutenção, instalações e pequenos reparos residenciais em Teresina. Encontre seu serviço e converse com o Mestre Zé."
     />
     <meta name="theme-color" content="#102a4c" />
     <meta name="robots" content="noindex,nofollow" />
@@ -13,7 +13,7 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preload" as="image" href="imagens/casa.jpg" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script src="script.js?v=gemini-1" defer></script>
   </head>
   <body>
     <a class="skip" href="#conteudo">Ir para o conteúdo</a>
@@ -22,7 +22,7 @@
         <a class="marca" href="#inicio" aria-label="ObraFácil — início"
           ><svg viewBox="0 0 48 48" aria-hidden="true">
             <path d="M5 23 24 7l19 16M11 20v21h26V20M20 41V28h9v13" /></svg
-          ><span>Obra<b>Fácil</b><small>Serviços residenciais</small></span></a
+          ><span>Obra<b>Fácil</b><small>Sua casa em boas mãos.</small></span></a
         >
         <button
           id="menu-toggle"
@@ -55,6 +55,7 @@
         </div>
         <div class="container hero-interior">
           <div class="hero-texto">
+            <span class="eyebrow"><span class="dot"></span> SERVIÇOS RESIDENCIAIS EM TERESINA</span>
             <h1 id="titulo">Manutenção e reparos<br />para <em>sua casa.</em></h1>
             <p>
               Do pequeno conserto à melhoria que ficou para depois. Encontre o serviço certo e deixe
@@ -63,19 +64,43 @@
             <div class="hero-botoes">
               <a class="btn" href="#servicos"
                 >Encontre seu serviço <span aria-hidden="true">→</span></a
-              >
+              ><button class="btn btn-outline" data-abrir-chat>Fale com o Mestre Zé</button>
+            </div>
+            <div class="hero-local">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              Teresina, Piauí <span>•</span> Prático, do começo ao fim
             </div>
           </div>
         </div>
       </section>
-      <section id="servicos" class="container secao">
-        <h2>Nossos serviços</h2>
-        <p class="sub">Escolha o reparo que sua casa precisa.</p>
+      <div class="beneficios">
+        <div class="container beneficios-inner">
+          <span><b aria-hidden="true">✓</b> O serviço que você precisa</span
+          ><span><b aria-hidden="true">✓</b> Preferência de profissional</span
+          ><span><b aria-hidden="true">✓</b> Atendimento sem complicação</span>
+        </div>
+      </div>
+      <section id="servicos" class="container secao" aria-labelledby="titulo-servicos">
+        <div class="secao-cabecalho">
+          <div>
+            <span class="eyebrow">CUIDADO EM CADA DETALHE</span>
+            <h2 id="titulo-servicos">O que sua casa precisa?</h2>
+            <p class="sub">Escolha um serviço. O Mestre Zé ajuda você com o próximo passo.</p>
+          </div>
+          <span class="section-note">Pequenos reparos.<br />Uma grande diferença.</span>
+        </div>
         <div class="grade-servicos">
           <article class="card" data-genero="homem">
             <div class="card-foto">
-              <div class="foto-pendente">Foto do serviço</div>
-              <span class="card-numero">01</span>
+              <img
+                src="imagens/reboco.webp"
+                alt="Homem aplicando reboco em uma parede com desempenadeira"
+                width="900"
+                height="600"
+              /><span class="card-numero">01</span>
             </div>
             <div class="card-corpo">
               <h3>Reboco de parede</h3>
@@ -87,8 +112,12 @@
           </article>
           <article class="card" data-genero="mulher">
             <div class="card-foto">
-              <div class="foto-pendente">Foto do serviço</div>
-              <span class="card-numero">02</span>
+              <img
+                src="imagens/pintura.webp"
+                alt="Mulher pintando uma parede interna com um rolo de pintura"
+                width="900"
+                height="600"
+              /><span class="card-numero">02</span>
             </div>
             <div class="card-corpo">
               <h3>Pintura</h3>
@@ -100,8 +129,12 @@
           </article>
           <article class="card" data-genero="homem">
             <div class="card-foto">
-              <div class="foto-pendente">Foto do serviço</div>
-              <span class="card-numero">03</span>
+              <img
+                src="imagens/lampada.webp"
+                alt="Homem em uma escada instalando uma lâmpada na luminária do teto"
+                width="900"
+                height="600"
+              /><span class="card-numero">03</span>
             </div>
             <div class="card-corpo">
               <h3>Troca de lâmpada</h3>
@@ -113,8 +146,13 @@
           </article>
           <article class="card" data-genero="mulher">
             <div class="card-foto">
-              <div class="foto-pendente">Foto do serviço</div>
-              <span class="card-numero">04</span>
+              <img
+                src="imagens/tomada.webp"
+                alt="Mulher eletricista fixando o acabamento de uma tomada com ferramenta isolada"
+                width="900"
+                height="600"
+                loading="lazy"
+              /><span class="card-numero">04</span>
             </div>
             <div class="card-corpo">
               <h3>Troca de tomada</h3>
@@ -126,8 +164,13 @@
           </article>
           <article class="card" data-genero="homem">
             <div class="card-foto">
-              <div class="foto-pendente">Foto do serviço</div>
-              <span class="card-numero">05</span>
+              <img
+                src="imagens/torneira.webp"
+                alt="Homem instalando uma torneira cromada na pia de uma cozinha"
+                width="900"
+                height="600"
+                loading="lazy"
+              /><span class="card-numero">05</span>
             </div>
             <div class="card-corpo">
               <h3>Troca de torneira</h3>
@@ -139,8 +182,13 @@
           </article>
           <article class="card" data-genero="mulher">
             <div class="card-foto">
-              <div class="foto-pendente">Foto do serviço</div>
-              <span class="card-numero">06</span>
+              <img
+                src="imagens/moveis.webp"
+                alt="Mulher montando um armário de madeira com uma parafusadeira"
+                width="900"
+                height="600"
+                loading="lazy"
+              /><span class="card-numero">06</span>
             </div>
             <div class="card-corpo">
               <h3>Montagem de móveis</h3>
@@ -152,43 +200,85 @@
           </article>
         </div>
         <div class="outros">
-          <h3>Precisa de outro reparo?</h3>
-          <a href="#contato">Preencha o formulário</a>
+          <div class="outros-icone" aria-hidden="true">+</div>
+          <div>
+            <h3>Não encontrou o que precisa?</h3>
+            <p>Conte seu caso para preparar uma solicitação personalizada.</p>
+          </div>
+          <button class="btn btn-outline" data-servico="Outros serviços">
+            Outros serviços <span aria-hidden="true">→</span>
+          </button>
         </div>
+        <p class="foto-nota">Imagens ilustrativas geradas para apresentar os serviços.</p>
       </section>
-      <section class="passos secao" id="como-funciona">
+      <section class="passos secao" id="como-funciona" aria-labelledby="titulo-passos">
         <div class="container">
-          <h2>Como funciona?</h2>
+          <span class="eyebrow">SIMPLES ASSIM</span>
+          <h2 id="titulo-passos">Menos preocupação. Mais solução.</h2>
           <div class="passos-grid">
             <div>
-              <h3>1. Escolha</h3>
-              <p>Encontre seu serviço.</p>
+              <b>01</b>
+              <h3>Escolha o serviço</h3>
+              <p>Encontre o reparo ou a melhoria que sua casa está precisando.</p>
             </div>
             <div>
-              <h3>2. Descreva</h3>
-              <p>Conte o que precisa no formulário.</p>
+              <b>02</b>
+              <h3>Converse com o Mestre Zé</h3>
+              <p>Descreva o problema. Nosso assistente ajuda a organizar os detalhes.</p>
             </div>
             <div>
-              <h3>3. Confira</h3>
-              <p>Confira o resumo na tela.</p>
+              <b>03</b>
+              <h3>Prepare sua visita</h3>
+              <p>Informe a data desejada e salve o resumo para compartilhar.</p>
             </div>
           </div>
         </div>
       </section>
-      <section class="container secao contato" id="contato">
+      <section class="container secao contato" id="contato" aria-labelledby="titulo-contato">
         <div class="contato-intro">
-          <h2>Solicite um serviço</h2>
-          <p>Informe seu nome e descreva o reparo.</p>
+          <span class="eyebrow">VAMOS RESOLVER?</span>
+          <h2 id="titulo-contato">Dê o primeiro passo.<br />A gente facilita.</h2>
+          <p class="sub">Conte o que precisa e escolha o melhor momento para uma visita.</p>
+          <div class="ajuda-card">
+            <img
+              src="imagens/mestre-ze.jpg"
+              alt="Avatar do assistente Mestre Zé"
+              width="56"
+              height="56"
+              loading="lazy"
+            />
+            <div>
+              <strong>Ficou com alguma dúvida?</strong>
+              <p>O Mestre Zé ajuda você.</p>
+              <button class="text-btn" data-abrir-chat>Conversar agora →</button>
+            </div>
+          </div>
+          <p class="contato-nota">
+            Versão de demonstração: o pedido fica salvo apenas neste navegador. Data, orçamento e
+            disponibilidade dependem de confirmação da equipe.
+          </p>
         </div>
         <div class="form-card">
           <form id="formulario" class="formulario">
-            <label>Nome<input name="nome" required placeholder="Seu nome" /></label>
             <label
-              >WhatsApp<input name="whatsapp" type="tel" required placeholder="DDD e telefone"
-            /></label>
-            <label class="amplo"
+              >Seu nome<input
+                name="nome"
+                required
+                autocomplete="name"
+                maxlength="100"
+                placeholder="Como podemos chamar você?" /></label
+            ><label
+              >WhatsApp<input
+                name="whatsapp"
+                required
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                maxlength="20"
+                placeholder="(86) 99999-9999" /></label
+            ><label
               >Serviço<select name="servico" id="servico" required>
-                <option value="">Selecione</option>
+                <option value="">Selecione o serviço</option>
                 <option>Reboco de parede</option>
                 <option>Pintura</option>
                 <option>Troca de lâmpada</option>
@@ -197,21 +287,156 @@
                 <option>Montagem de móveis</option>
                 <option>Outros serviços</option>
               </select></label
-            >
-            <label class="amplo"
-              >Descrição<textarea name="descricao" id="descricao" rows="3" required></textarea>
-            </label>
-            <button class="btn amplo" type="submit">Ver resumo</button>
+            ><label
+              >Preferência de profissional<select name="preferencia" id="preferencia">
+                <option>Sem preferência</option>
+                <option>Mulher</option>
+                <option>Homem</option>
+              </select></label
+            ><label
+              >Bairro em Teresina<input
+                name="bairro"
+                id="bairro"
+                required
+                maxlength="100"
+                autocomplete="address-level3"
+                placeholder="Qual é o seu bairro?" /></label
+            ><label>Data desejada<input name="data" id="data" type="date" required /></label
+            ><label
+              >Horário desejado<input
+                name="hora"
+                id="hora"
+                type="time"
+                min="08:00"
+                max="18:00"
+                required
+              /><small>Preferência entre 8h e 18h.</small></label
+            ><label class="amplo"
+              >Conte um pouco sobre o serviço<textarea
+                name="descricao"
+                id="descricao"
+                required
+                rows="3"
+                maxlength="2000"
+                placeholder="O que aconteceu? Qual a quantidade ou tamanho aproximado?"
+              ></textarea></label
+            ><button class="btn amplo" type="submit">
+              Salvar solicitação <span aria-hidden="true">→</span>
+            </button>
+            <p class="form-nota amplo">
+              Seus dados ficam neste dispositivo. Nenhum agendamento é confirmado automaticamente.
+            </p>
           </form>
-          <div id="resultado" class="resultado" aria-live="polite"></div>
+          <div id="resultado" class="resultado" aria-live="polite" hidden>
+            <span class="success-mark" aria-hidden="true">✓</span>
+            <h3>Seu pedido está organizado!</h3>
+            <p>Salvo neste navegador. Compartilhe o resumo com a equipe para confirmar a visita.</p>
+            <pre id="resumo"></pre>
+            <div class="resultado-acoes">
+              <button id="copiar" class="btn">Copiar resumo</button
+              ><button id="baixar" class="btn btn-outline">Baixar pedido</button
+              ><button id="editar" class="text-btn">Editar dados</button>
+            </div>
+            <button id="apagar" class="text-btn apagar">Apagar pedido deste dispositivo</button>
+          </div>
+        </div>
+      </section>
+      <section class="container perguntas secao" aria-labelledby="titulo-perguntas">
+        <div>
+          <span class="eyebrow">PODE PERGUNTAR</span>
+          <h2 id="titulo-perguntas">Antes de começar</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Como funciona o orçamento?</summary>
+            <p>
+              O valor depende do serviço, da quantidade, dos materiais e das condições do local.
+              Descreva seu caso para preparar a avaliação. Esta versão não calcula nem confirma
+              preços.
+            </p>
+          </details>
+          <details>
+            <summary>Posso escolher uma profissional mulher?</summary>
+            <p>
+              Sim. Informe sua preferência no formulário ou ao Mestre Zé. O atendimento depende da
+              disponibilidade da equipe e precisa ser confirmado.
+            </p>
+          </details>
+          <details>
+            <summary>A visita já fica agendada ao preencher?</summary>
+            <p>
+              Ainda não. Nesta demonstração, você salva e exporta o pedido. O agendamento só
+              acontece após a confirmação de uma equipe.
+            </p>
+          </details>
+          <details>
+            <summary>E se o meu serviço não estiver na lista?</summary>
+            <p>
+              Selecione “Outros serviços” e descreva o reparo. O Mestre Zé também pode ajudar você a
+              organizar as informações.
+            </p>
+          </details>
         </div>
       </section>
     </main>
     <footer>
-      <div class="container">
-        <strong>ObraFácil</strong>
-        <p>Serviços residenciais.</p>
+      <div class="container footer-inner">
+        <a class="marca" href="#inicio"
+          ><span>Obra<b>Fácil</b><small>Sua casa em boas mãos.</small></span></a
+        >
+        <p>Manutenção e reparos residenciais<br />Teresina, Piauí</p>
+        <span>Ambiente privado de demonstração.</span>
       </div>
     </footer>
+    <button
+      id="chat-bolha"
+      class="chat-bolha"
+      aria-label="Abrir conversa com Mestre Zé"
+      aria-controls="chat"
+      aria-expanded="false"
+    >
+      <img src="imagens/mestre-ze.jpg" alt="" width="48" height="48" /><span
+        ><b>Mestre Zé</b><small>Como posso ajudar?</small></span
+      ><span aria-hidden="true" class="bolha-icon">↗</span>
+    </button>
+    <section
+      id="chat"
+      class="chat"
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="chat-titulo"
+      hidden
+    >
+      <div class="chat-cabecalho">
+        <img src="imagens/mestre-ze.jpg" alt="" width="50" height="50" />
+        <div>
+          <strong id="chat-titulo">Mestre Zé</strong><small>Assistente virtual · Gemini</small>
+        </div>
+        <button id="fechar-chat" aria-label="Fechar conversa">×</button>
+      </div>
+      <div
+        id="mensagens"
+        class="mensagens"
+        role="log"
+        aria-live="polite"
+        aria-relevant="additions"
+      ></div>
+      <div id="chat-acoes" class="chat-acoes">
+        <button id="transferir" hidden>Levar dados para o formulário →</button
+        ><button id="reiniciar" title="Iniciar uma nova conversa">Nova conversa</button>
+      </div>
+      <form id="form-chat" class="chat-entrada">
+        <label class="sr-only" for="entrada">Mensagem para o Mestre Zé</label
+        ><input
+          id="entrada"
+          placeholder="Conte o que sua casa precisa…"
+          autocomplete="off"
+          maxlength="2000"
+          required
+        /><button aria-label="Enviar mensagem" type="submit">➤</button>
+      </form>
+      <div class="chat-rodape">Sem agendamento automático. Você revisa tudo antes.</div>
+    </section>
+    <div id="toast" role="status" class="toast" hidden></div>
   </body>
 </html>
