@@ -6,18 +6,20 @@ O público-alvo são pessoas de Teresina que precisam de manutenção em casa.
 
 ## Integrantes
 
-- Marcelo
-- Alcimar
-- Miguel
+- Alcimar Pereira Lima Filho
+- Luis Miguel Miranda Costa
+- Marcelo Gomes de Carvalho
 
 ## Tecnologias utilizadas
 
 - HTML: estrutura e conteúdo do site.
 - CSS: cores, imagens, organização e adaptação para celular.
 - JavaScript: funcionamento dos botões, formulário e chatbot.
+- Node.js: servidor que entrega o site, recebe as mensagens do chat e guarda a chave da API com segurança.
+- API do Google Gemini (modelo `gemini-3.5-flash-lite`): inteligência artificial que gera as respostas do Mestre Zé.
 - GitHub: organização do código e registro das contribuições do grupo.
 
-Não utilizamos frameworks nesta versão.
+Não utilizamos frameworks nem bibliotecas externas nesta versão.
 
 ## Como executar
 
@@ -26,6 +28,7 @@ Não utilizamos frameworks nesta versão.
 3. Copie o arquivo `.env.example` e renomeie a cópia para `.env`.
 4. No `.env`, coloque sua chave depois de `GEMINI_API_KEY=`. Mantenha o modelo `gemini-3.5-flash-lite`, usado nos testes desta versão.
 5. Abra o terminal na pasta do projeto e execute `npm start`.
+   - No Windows, se aparecer o erro "a execução de scripts foi desabilitada neste sistema", use `npm.cmd start`. O resultado é o mesmo.
 6. Abra `http://localhost:3000` no navegador.
 
 Não precisa executar `npm install`: esta versão usa apenas recursos do Node.js, sem bibliotecas adicionais. O servidor precisa continuar aberto enquanto o site estiver em uso.
@@ -83,11 +86,11 @@ Professor: Tiago Martins Ribeiro.
 
 ## Hospedagem
 
-O código pode ficar em um repositório privado, com acesso ao professor e aos integrantes. Cada integrante deve fazer suas próprias contribuições e commits ao longo do desenvolvimento.
+O código está em um repositório público no GitHub, com a participação dos três integrantes. Cada integrante fez suas próprias contribuições e commits ao longo do desenvolvimento.
 
-Para disponibilizar o site com Gemini, a hospedagem precisa executar Node.js e permitir configurar a variável `GEMINI_API_KEY`. O GitHub Pages sozinho não executa nosso servidor. A versão já hospedada para teste permanece privada e usa a mesma lógica da API, adaptada ao servidor da plataforma.
+Para disponibilizar o site com Gemini na internet, a hospedagem precisa executar Node.js e permitir configurar a variável `GEMINI_API_KEY`. O GitHub Pages sozinho não executa nosso servidor.
 
-A chave real não acompanha este ZIP. Para trocar a chave localmente, altere apenas o `.env` e reinicie o servidor. Na hospedagem, altere o segredo `GEMINI_API_KEY` e aplique a nova configuração, sem editar o layout ou o código do chat.
+A chave real não está no repositório: o arquivo `.env` está no `.gitignore`. Para trocar a chave localmente, altere apenas o `.env` e reinicie o servidor. Em uma hospedagem, altere o segredo `GEMINI_API_KEY` nas configurações da plataforma, sem editar o layout ou o código do chat.
 
 ## Como explicar o funcionamento
 
