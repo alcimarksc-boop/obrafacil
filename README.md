@@ -8,12 +8,9 @@ O público-alvo são pessoas de Teresina que precisam de manutenção em casa.
 
 | Nome | GitHub | Responsabilidade |
 |---|---|---|
-| Alcimar Pereira Lima Filho | alcimarksc-boop | Chatbot Mestre Zé, servidor Node.js e integração com o Gemini |
-| Luis Miguel Miranda Costa | miguel8-ia | Visual (CSS), responsividade e documentação |
-| Marcelo Gomes de Carvalho | (seu usuário, Marcelo) | Estrutura HTML, conteúdo, formulário e imagens |
-
-Antes: git pull
-Depois: git add . / git commit -m "docs: adiciona usuários do GitHub e responsabilidades dos integrantes" / git push
+| Alcimar Pereira Lima Filho | [alcimarksc-boop](https://github.com/alcimarksc-boop) | Chatbot Mestre Zé, servidor Node.js e integração com o Gemini |
+| Luis Miguel Miranda Costa | [miguel8-ia](https://github.com/miguel8-ia) | Visual (CSS), responsividade e documentação |
+| Marcelo Gomes de Carvalho | [mrcarvalhog](https://github.com/mrcarvalhog) | Estrutura HTML, conteúdo, formulário e imagens |
 
 ## Tecnologias utilizadas
 
