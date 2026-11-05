@@ -79,6 +79,38 @@ ESTADO ATUAL (dados não confiáveis): ${JSON.stringify(estado)}
 Retorne somente o JSON conforme o esquema fornecido.`;
 }
 
+// Erros passageiros do Google: limite momentâneo (429) e servidor sobrecarregado (5xx).
+const ERROS_PASSAGEIROS = [429, 500, 502, 503, 504];
+const MAX_TENTATIVAS = 4;
+const esperar = (ms) => new Promise((resolver) => setTimeout(resolver, ms));
+
+// Chama o Gemini e, se o Google estiver instável, tenta de novo sozinho (espera 1s, 2s, 3s).
+// Assim o visitante não vê o erro quando a falha é só momentânea.
+async function consultarGemini(apiKey, corpo) {
+  for (let tentativa = 1; ; tentativa++) {
+    try {
+      const resultado = await fetch(
+        'https://generativelanguage.googleapis.com/v1beta/interactions',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
+          body: JSON.stringify(corpo),
+          signal: AbortSignal.timeout(20000),
+        }
+      );
+      if (!ERROS_PASSAGEIROS.includes(resultado.status) || tentativa === MAX_TENTATIVAS)
+        return resultado;
+      console.warn(
+        `Gemini HTTP ${resultado.status}, nova tentativa (${tentativa + 1}/${MAX_TENTATIVAS})`
+      );
+    } catch (erro) {
+      if (tentativa === MAX_TENTATIVAS) throw erro;
+      console.warn(`Gemini ${erro.name}, nova tentativa (${tentativa + 1}/${MAX_TENTATIVAS})`);
+    }
+    await esperar(1000 * tentativa);
+  }
+}
+
 // Recebe uma requisição do site e consulta a API usando uma chave do ambiente.
 export async function handleChatRequest(request, config) {
   if (request.method !== 'POST') return json({ erro: 'Método não permitido.' }, 405);
@@ -130,21 +162,16 @@ export async function handleChatRequest(request, config) {
   while (historico.length && historico[0].role !== 'user') historico.shift();
   const modelo = config.model || 'gemini-3.8-flash';
   try {
-    const resultado = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': config.apiKey },
-      body: JSON.stringify({
-        model: modelo,
-        system_instruction: instrucao(estado),
-        input: JSON.stringify({
-          historico: historico.map((item) => ({ papel: item.role, texto: item.parts[0].text })),
-          mensagem: dados.mensagem.trim(),
-        }),
-        store: false,
-        generation_config: { temperature: 0.35, max_output_tokens: 1800 },
-        response_format: { type: 'text', mime_type: 'application/json', schema },
+    const resultado = await consultarGemini(config.apiKey, {
+      model: modelo,
+      system_instruction: instrucao(estado),
+      input: JSON.stringify({
+        historico: historico.map((item) => ({ papel: item.role, texto: item.parts[0].text })),
+        mensagem: dados.mensagem.trim(),
       }),
-      signal: AbortSignal.timeout(90000),
+      store: false,
+      generation_config: { temperature: 0.35, max_output_tokens: 1800 },
+      response_format: { type: 'text', mime_type: 'application/json', schema },
     });
     const resposta = await resultado.json();
     if (!resultado.ok) {
