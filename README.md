@@ -4,6 +4,8 @@ O ObraFácil é um projeto acadêmico de um site de serviços residenciais em Te
 
 O público-alvo são pessoas de Teresina que precisam de manutenção em casa.
 
+**Site no ar:** https://obrafacil-render.onrender.com/
+
 ## Integrantes
 
 | Nome | GitHub | Responsabilidade |
@@ -91,6 +93,8 @@ Professor: Tiago Martins Ribeiro.
 O código está em um repositório público no GitHub, com a participação dos três integrantes. Cada integrante fez suas próprias contribuições e commits ao longo do desenvolvimento.
 
 Para disponibilizar o site com Gemini na internet, a hospedagem precisa executar Node.js e permitir configurar a variável `GEMINI_API_KEY`. O GitHub Pages sozinho não executa nosso servidor.
+
+O site está publicado no Render: https://obrafacil-render.onrender.com/. A chave do Gemini fica guardada nas variáveis de ambiente do Render, fora do código. No plano gratuito, o site "dorme" quando fica sem acessos, e a primeira abertura pode levar até 1 minuto.
 
 A chave real não está no repositório: o arquivo `.env` está no `.gitignore`. Para trocar a chave localmente, altere apenas o `.env` e reinicie o servidor. Em uma hospedagem, altere o segredo `GEMINI_API_KEY` nas configurações da plataforma, sem editar o layout ou o código do chat.
 
